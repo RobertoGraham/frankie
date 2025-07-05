@@ -1,5 +1,5 @@
 # frankie
 
 ```shell
-./gradlew function-1:run
+./gradlew function-1:bootRun
 ```

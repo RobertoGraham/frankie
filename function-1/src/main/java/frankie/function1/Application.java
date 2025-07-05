@@ -1,8 +1,18 @@
 package frankie.function1;
 
-public class Application {
+import java.util.function.Supplier;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.cloud.function.context.FunctionalSpringApplication;
+
+@SpringBootConfiguration(proxyBeanMethods = false)
+final class Application implements Supplier<String> {
 
   public static void main(final String... args) {
-    System.out.println("Hi!");
+    FunctionalSpringApplication.run(Application.class, args);
+  }
+
+  @Override
+  public String get() {
+    return "Hi!";
   }
 }
