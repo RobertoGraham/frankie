@@ -1,0 +1,9 @@
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  Function1:
+    Type: AWS::Serverless::Function
+    Properties:
+      Architectures: [ arm64 ]
+      Runtime: java21
+      Handler: org.springframework.cloud.function.adapter.aws.FunctionInvoker::handleRequest
+      CodeUri: function-1/build/libs/function-1-all.jar

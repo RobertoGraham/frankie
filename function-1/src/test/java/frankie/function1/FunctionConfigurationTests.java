@@ -9,10 +9,10 @@ import org.springframework.cloud.function.context.FunctionCatalog;
 import org.springframework.cloud.function.context.test.FunctionalSpringBootTest;
 
 @FunctionalSpringBootTest
-final class ApplicationTests {
+final class FunctionConfigurationTests {
 
   @Test
-  void get(@Autowired final FunctionCatalog functionCatalog) {
+  void function1(@Autowired final FunctionCatalog functionCatalog) {
     assertThat(functionCatalog.getNames(Supplier.class))
         .singleElement()
         .extracting(functionCatalog::lookup)
